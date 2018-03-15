@@ -99,29 +99,29 @@
   width: 100%;
   height: 100%;
 }
-.content .banner {
+.content #firstpage .banner {
   position: relative;
   width: 100%;
   height: 420px;
 }
-.content .banner .banner-wrapper {
+.content #firstpage .banner .banner-wrapper {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.content .banner .banner-wrapper > ul {
+.content #firstpage .banner .banner-wrapper > ul {
   position: relative;
   width: 4047px;
   height: 420px;
 }
-.content .banner .banner-wrapper > ul > li {
+.content #firstpage .banner .banner-wrapper > ul > li {
   float: left;
   position: relative;
   width: 1349px;
   height: 420px;
   overflow: hidden;
 }
-.content .banner .banner-wrapper > ul > li img {
+.content #firstpage .banner .banner-wrapper > ul > li img {
   position: absolute;
   width: 1920px;
   height: 420px;
@@ -129,26 +129,28 @@
   left: 50%;
   transform: translateX(-50%);
 }
-.content .banner .banner-wrapper .icon {
+.content #firstpage .banner .banner-wrapper .icon {
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  height: 30px;
+  width: 100%;
+  height: 35px;
+  padding-top: 5px;
+  text-align: center;
 }
-.content .banner .banner-wrapper .icon > span {
+.content #firstpage .banner .banner-wrapper .icon > span {
   display: inline-block;
   width: 10px;
   height: 10px;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   margin: 5px;
-  vertical-align: middle;
 }
-.content .banner .banner-wrapper .icon > span.on {
+.content #firstpage .banner .banner-wrapper .icon > span.on {
   background: #fff;
 }
-.content .banner .banner-menu {
+.content #firstpage .banner .banner-menu {
   position: absolute;
   left: 80px;
   top: 0;
@@ -156,19 +158,21 @@
   height: 420px;
   background: rgba(0, 0, 0, 0.5);
 }
-.content .banner .banner-menu .menu-1 li {
+.content #firstpage .banner .banner-menu .menu-1 {
   position: relative;
+}
+.content #firstpage .banner .banner-menu .menu-1 li {
   width: 180px;
   height: 42px;
   line-height: 42px;
 }
-.content .banner .banner-menu .menu-1 li a {
+.content #firstpage .banner .banner-menu .menu-1 li a {
   display: block;
   width: 100%;
   height: 100%;
   padding-left: 45px;
 }
-.content .banner .banner-menu .menu-1 li a i {
+.content #firstpage .banner .banner-menu .menu-1 li a i {
   display: inline-block;
   font-weight: bold;
   color: #fff;
@@ -177,57 +181,431 @@
   text-align: justify;
   text-align-last: justify;
 }
-.content .banner .banner-menu .menu-1 li a img {
-  position: absolute;
-  right: 35px;
-  top: 15px;
+.content #firstpage .banner .banner-menu .menu-1 li a img {
   width: 6px;
   height: 11px;
-  display: block;
+  margin-left: 10px;
 }
-.content .banner .banner-menu .menu-1 li a:hover {
+.content #firstpage .banner .banner-menu .menu-1 li a:hover {
   background: rgba(0, 0, 0, 0.6);
 }
-.content .banner .banner-menu .menu-1 li .menu-2 {
-  /*display: none;*/
+.content #firstpage .banner .banner-menu .menu-1 li .menu-2 {
+  display: none;
   position: absolute;
   top: 0;
   left: 180px;
   width: 160px;
   height: 420px;
   line-height: 42px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
 }
-.content .banner .banner-menu .menu-1 li .menu-2 li {
+.content #firstpage .banner .banner-menu .menu-1 li .menu-2 li {
   width: 160px;
 }
-.content .banner .banner-menu .menu-1 li .menu-2 li a {
+.content #firstpage .banner .banner-menu .menu-1 li .menu-2 li a {
   display: block;
   width: 100%;
   height: 100%;
   padding-left: 45px;
 }
-.content .banner .banner-menu .menu-1 li .menu-2 li a span {
+.content #firstpage .banner .banner-menu .menu-1 li .menu-2 li a span {
   color: #000;
   font-size: 16px;
   font-weight: bold;
 }
-.content .banner .banner-menu .menu-1 li .menu-2 li a:hover {
-  background: rgba(255, 255, 255, 0.9);
+.content #firstpage .banner .banner-menu .menu-1 li .menu-2 li a span:hover {
+  color: #fb474f;
 }
-.content .box1 {
+.content #firstpage .box1 {
   width: 100%;
   height: 516px;
   padding-bottom: 20px;
 }
-.content .box1 .box-center {
+.content #firstpage .box1 .box-center {
   width: 1200px;
   height: 100%;
   padding-top: 50px;
   margin: 0 auto;
 }
-.content .box1 .box-center .server-body {
+.content #firstpage .box1 .box-center .server-body {
   width: 100%;
   height: 100%;
+}
+.content #firstpage .box1 .box-center .server-body .navigation {
+  text-align: center;
+}
+.content #firstpage .box1 .box-center .server-body .navigation .serverTop {
+  display: block;
+  width: 100%;
+  line-height: 31px;
+  font-size: 28px;
+  font-weight: 800;
+  font-family: "Microsoft YaHei";
+}
+.content #firstpage .box1 .box-center .server-body .navigation .serverType {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-family: "幼圆";
+  color: #3d3838;
+}
+.content #firstpage .box1 .box-center .server-body .navigation .serverType > a {
+  transition: color .3s;
+}
+.content #firstpage .box1 .box-center .server-body .navigation .serverType > a.lookmore {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 18px;
+}
+.content #firstpage .box1 .box-center .server-body .navigation .serverType > a:hover {
+  color: #fb474f;
+}
+.content #firstpage .box1 .box-center .server-body .service-item {
+  height: 345px;
+  margin-top: 10px;
+}
+.content #firstpage .box1 .box-center .server-body .service-item > a {
+  float: left;
+}
+.content #firstpage .box1 .box-center .server-body .service-item > a .shop-list {
+  height: 345px;
+  width: 230px;
+  margin: 0 5px;
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  font-size: 0;
+}
+.content #firstpage .box1 .box-center .server-body .service-item > a .shop-list:hover {
+  box-shadow: 5px 5px 15px #ccc;
+}
+.content #firstpage .box1 .box-center .server-body .service-item > a .shop-list img {
+  width: 100%;
+}
+.content #firstpage .box1 .box-center .server-body .service-item > a .shop-list .serviceName {
+  display: block;
+  height: 28px;
+  line-height: 28px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.content #firstpage .box1 .box-center .server-body .service-item > a .shop-list .description {
+  display: block;
+  padding: 5px 0;
+  height: 58px;
+  color: #929292;
+  font-size: 13px;
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.content #firstpage .box1 .box-center .server-body .service-item > a .shop-list .shop-list-bottom {
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fb474f;
+}
+.content #firstpage .box1 .box-center .server-body .service-item > a .shop-list .shop-list-bottom .price {
+  font-size: 20px;
+}
+.content #firstpage .box1 .box-center .server-body .service-item > a .shop-list .shop-list-bottom .btn {
+  float: right;
+  width: 76px;
+  height: 24px;
+  background: #fb474f;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  line-height: 24px;
+}
+.content #firstpage .box1.box1:nth-child(even) {
+  background: #FBF8F8;
+}
+.content .footer {
+  height: 384px;
+  background: #fff;
+}
+.content .footer .footer-top {
+  height: 214px;
+}
+.content .footer .footer-top .promise {
+  height: 214px;
+  padding-top: 60px;
+  text-align: center;
+}
+.content .footer .footer-top .promise > h2 {
+  height: 33px;
+  line-height: 33px;
+  font-size: 30px;
+  font-weight: 800;
+  font-family: '微软雅黑';
+  margin: 20px auto 10px;
+}
+.content .footer .footer-top .promise > h2 i {
+  color: #fb474f;
+}
+.content .footer .footer-top .promise p {
+  font-size: 22px;
+  line-height: 25px;
+  color: #3d3838;
+  margin: 0 auto;
+}
+.content .footer .footer-top .promise .ser-icon {
+  padding-top: 20px;
+  height: 66px;
+}
+.content .footer .footer-top .promise .ser-icon > span {
+  font-size: 18px;
+  color: #1d1515;
+  line-height: 22px;
+  text-align: center;
+  vertical-align: top;
+}
+.content .footer .footer-top .promise .ser-icon > span img {
+  margin-right: 10px;
+}
+.content .footer .footer-bottom {
+  height: 170px;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 50px;
+  font-size: 0;
+}
+.content .footer .footer-bottom .bottom-left {
+  display: inline-block;
+  font-size: 18px;
+  font-family: "微软雅黑";
+  font-weight: bold;
+  vertical-align: top;
+}
+.content .footer .footer-bottom .bottom-right {
+  display: inline-block;
+  height: 93px;
+  width: 1090px;
+  margin-left: 30px;
+}
+.content .footer .footer-bottom .bottom-right > a {
+  float: left;
+  font-size: 16px;
+  color: #898989;
+  line-height: 30px;
+  font-weight: 200;
+  width: 9%;
+  text-align: center ;
+}
+.content .partner {
+  /*position: fixed;
+    bottom: 0;*/
+  width: 100%;
+  height: 250px;
+  margin: 0 auto;
+  padding-top: 30px;
+  background: #FBF8F8;
+}
+.content .partner p {
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: left;
+}
+.content .partner .container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 160px;
+  font-size: 0;
+}
+.content .partner .container a {
+  display: inline-block;
+  width: 120px;
+  height: 60px;
+  margin: 20px 12px 0 0;
+  background: #fff;
+  text-align: center;
+  line-height: 60px;
+}
+.content .partner .container a img {
+  width: 100px;
+  vertical-align: middle;
+}
+.content .partner .desc {
+  width: 1200px;
+  margin: 0 auto;
+  color: #898989;
+  line-height: 40px;
+  vertical-align: middle;
+}
+/*服务商*/
+#service {
+  width: 100%;
+  margin-top: 71px;
+  margin-bottom: 324px;
+  overflow: hidden;
+  background: #FBF8F8;
+}
+#service > h2 {
+  width: 1200px;
+  line-height: 85px;
+  font-size: 18px;
+  margin: 0 auto;
+}
+#service .nav {
+  width: 1200px;
+  margin: 0 auto;
+}
+#service .nav .nav-center {
+  float: left;
+  width: 970px;
+  margin-bottom: 50px;
+}
+#service .nav .nav-center ul {
+  width: 970px;
+  overflow: hidden;
+}
+#service .nav .nav-center ul li {
+  float: left;
+  width: 230px;
+  height: 300px;
+  border: 1px solid #eaeaea;
+  padding: 10px;
+  margin: 0 10px 10px 0;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0;
+}
+#service .nav .nav-center ul li:hover {
+  box-shadow: 5px 5px 15px #ccc;
+}
+#service .nav .nav-center ul li img {
+  width: 210px;
+  height: 210px;
+}
+#service .nav .nav-center ul li .fp {
+  margin: 15px 0 0 0;
+  height: 26px;
+}
+#service .nav .nav-center ul li .fp img {
+  width: 18px;
+  height: 17px;
+  margin: 0 5px 6px 0;
+  vertical-align: bottom;
+}
+#service .nav .nav-center ul li .fp span {
+  line-height: 26px;
+  font-size: 16px;
+  font-weight: bold;
+}
+#service .nav .nav-center ul li .lp {
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  font-size: 12px;
+  color: #929292;
+}
+#service .nav .nav-center ul li .lp i {
+  float: right;
+}
+#service .nav .nav-center .moreshop {
+  height: 152px;
+  text-align: center;
+}
+#service .nav .nav-center .moreshop span {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  border: 1px solid #e5e5e5;
+  line-height: 50px;
+  margin: 50px 5px;
+  cursor: pointer;
+}
+#service .nav .aside {
+  float: right;
+  width: 230px;
+  height: 599px;
+}
+#service .nav .aside img {
+  display: block;
+  width: 100%;
+}
+#service .nav .aside img:hover {
+  cursor: pointer;
+}
+#service .nav .aside div {
+  position: relative;
+  width: 230px;
+  height: 290px;
+  margin-top: 10px;
+  background: url("../images/service/tuijianfuwushang_06.jpg");
+}
+#service .nav .aside div img {
+  width: 130px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  /*margin:50px 0 0 50px;*/
+}
+/*云家政*/
+.head-empty {
+  width: 100%;
+  height: 71px;
   background: pink;
+}
+#service-item {
+  width: 100%;
+  margin-bottom: 324px;
+  background: #FBF8F8;
+}
+#service-item .htit {
+  height: 140px;
+  margin-top: 10px;
+  background: #fff;
+}
+#service-item .htit .htit-center {
+  width: 1200px;
+  height: 140px;
+  margin: 0 auto;
+  background: #fff;
+}
+#service-item .htit .htit-center .htit-right {
+  float: left;
+  width: 498px;
+  height: 120px;
+  margin: 10px 0 10px 20px;
+}
+#service-item .nav {
+  width: 1200px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#service-item .nav .nav-center {
+  float: left;
+  width: 970px;
+  margin-bottom: 50px;
+}
+#service-item .nav .aside {
+  float: right;
+  width: 230px;
+  height: 599px;
+}
+#service-item .nav .aside div {
+  position: relative;
+  width: 230px;
+  height: 290px;
+}
+#service-item .nav .aside div:first-child {
+  background: url("../images/service/fuwushang2_07.jpg");
+}
+#service-item .nav .aside div:last-child {
+  background: url("../images/service/tuijianfuwushang_06.jpg");
+  margin-top: 10px;
+}
+#service-item .nav .aside div img {
+  width: 130px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
 }
