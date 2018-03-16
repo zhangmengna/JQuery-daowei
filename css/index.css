@@ -8,11 +8,24 @@
   border-bottom: 1px solid #e5e5e5;
   z-index: 100;
 }
+#header.ani {
+  animation-name: ani;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+@keyframes ani {
+  from {
+    transform: translateY(-100%) rotateX(90deg);
+  }
+  TO {
+    transform: translateY(0) rotateX(0);
+  }
+}
 #header .wrapper {
   width: 100%;
   height: 100%;
   padding: 2.5px 0;
-  background-color: rgba(255, 255, 255, 0.96);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 #header .wrapper .container {
   position: relative;
@@ -103,52 +116,84 @@
   position: relative;
   width: 100%;
   height: 420px;
+  /* .banner-wrapper{
+        width:100%;
+        height:100%;
+        overflow: hidden;
+        >ul{
+          position: relative;
+          width:4047px;
+          height:420px;
+          >li{
+            float: left;
+            position: relative;
+            width: 1349px;
+            height:420px;
+            overflow: hidden;
+            img{
+              position: absolute;
+              width:1920px;
+              height:420px;
+              top: 0;
+              left:50%;
+              transform: translateX(-50%);
+            }
+          }
+        }
+        .icon{
+          position: absolute;
+          left: 50%;
+          bottom:0;
+          transform: translateX(-50%);
+          width:100%;
+          height:35px;
+          padding-top: 5px;
+          text-align: center;
+          >span{
+            display: inline-block;
+            width:10px;
+            height:10px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 50%;
+            margin: 5px;
+            &.on{
+              background: #fff;
+            }
+          }
+        }
+      }*/
 }
-.content #firstpage .banner .banner-wrapper {
+.content #firstpage .banner .swiper-container {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
-.content #firstpage .banner .banner-wrapper > ul {
-  position: relative;
-  width: 4047px;
-  height: 420px;
+.content #firstpage .banner .swiper-container .swiper-wrapper .swiper-slide {
+  /* text-align: center;
+            font-size: 18px;
+            background: #fff;
+            position: relative;
+            !* Center slide text vertically *!
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;*/
 }
-.content #firstpage .banner .banner-wrapper > ul > li {
-  float: left;
-  position: relative;
-  width: 1349px;
-  height: 420px;
-  overflow: hidden;
+.content #firstpage .banner .swiper-container .swiper-wrapper .bg1 {
+  background: url("../images/main/banner1.jpg") center;
 }
-.content #firstpage .banner .banner-wrapper > ul > li img {
-  position: absolute;
-  width: 1920px;
-  height: 420px;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+.content #firstpage .banner .swiper-container .swiper-wrapper .bg2 {
+  background: url("../images/main/banner2.jpg") center;
 }
-.content #firstpage .banner .banner-wrapper .icon {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 35px;
-  padding-top: 5px;
-  text-align: center;
-}
-.content #firstpage .banner .banner-wrapper .icon > span {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  margin: 5px;
-}
-.content #firstpage .banner .banner-wrapper .icon > span.on {
-  background: #fff;
+.content #firstpage .banner .swiper-container .swiper-wrapper .bg3 {
+  background: url("../images/main/banner3.jpg") center;
 }
 .content #firstpage .banner .banner-menu {
   position: absolute;
@@ -156,6 +201,7 @@
   top: 0;
   width: 180px;
   height: 420px;
+  z-index: 3;
   background: rgba(0, 0, 0, 0.5);
 }
 .content #firstpage .banner .banner-menu .menu-1 {
@@ -167,13 +213,14 @@
   line-height: 42px;
 }
 .content #firstpage .banner .banner-menu .menu-1 li a {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
-  padding-left: 45px;
 }
 .content #firstpage .banner .banner-menu .menu-1 li a i {
   display: inline-block;
+  margin-left: 45px;
   font-weight: bold;
   color: #fff;
   font-size: 16px;
@@ -181,12 +228,23 @@
   text-align: justify;
   text-align-last: justify;
 }
-.content #firstpage .banner .banner-menu .menu-1 li a img {
+.content #firstpage .banner .banner-menu .menu-1 li a .right-icon {
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 35px;
   width: 6px;
   height: 11px;
-  margin-left: 10px;
 }
-.content #firstpage .banner .banner-menu .menu-1 li a:hover {
+.content #firstpage .banner .banner-menu .menu-1 li a .left {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  width: 6px;
+  height: 11px;
+}
+.content #firstpage .banner .banner-menu .menu-1 li:hover {
   background: rgba(0, 0, 0, 0.6);
 }
 .content #firstpage .banner .banner-menu .menu-1 li .menu-2 {
@@ -397,10 +455,8 @@
   text-align: center ;
 }
 .content .partner {
-  /*position: fixed;
-    bottom: 0;*/
   width: 100%;
-  height: 250px;
+  height: 210px;
   margin: 0 auto;
   padding-top: 30px;
   background: #FBF8F8;
@@ -432,12 +488,17 @@
   width: 100px;
   vertical-align: middle;
 }
-.content .partner .desc {
+.content .beian {
+  width: 100%;
+  height: 40px;
+  background: #FBF8F8;
+}
+.content .beian p {
   width: 1200px;
   margin: 0 auto;
-  color: #898989;
   line-height: 40px;
-  vertical-align: middle;
+  text-align: left;
+  color: #898989;
 }
 /*服务商*/
 #service {
@@ -552,16 +613,15 @@
 .head-empty {
   width: 100%;
   height: 71px;
-  background: pink;
 }
 #service-item {
   width: 100%;
   margin-bottom: 324px;
   background: #FBF8F8;
+  padding-top: 10px;
 }
 #service-item .htit {
   height: 140px;
-  margin-top: 10px;
   background: #fff;
 }
 #service-item .htit .htit-center {
@@ -572,9 +632,68 @@
 }
 #service-item .htit .htit-center .htit-right {
   float: left;
-  width: 498px;
+  width: 510px;
   height: 120px;
   margin: 10px 0 10px 20px;
+}
+#service-item .htit .htit-center .htit-right b {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 140px;
+}
+#service-item .htit .htit-center .htit-right i {
+  margin-left: 10px;
+  color: #929292;
+  line-height: 19px;
+}
+#service-item .htit .htit-center .htit-right i em {
+  font-size: 15px;
+  font-weight: 300;
+  color: #121212;
+  font-style: normal;
+}
+#service-item .htit .htit-center .htit-right i:nth-child(3) em {
+  color: #e84b47;
+}
+#service-item .htit .htit-center .htit-left {
+  height: 120px;
+}
+#service-item .htit .htit-center .htit-left span {
+  float: right;
+  width: 100px;
+  height: 44px;
+  margin-top: 70px;
+  line-height: 22px;
+  text-align: center;
+}
+#service-item .htit .htit-center .htit-left span i {
+  display: block;
+  color: #e84b47;
+}
+#service-item .htit .htit-center .htit-left span em {
+  position: relative;
+  bottom: 12px;
+  left: 20px;
+  color: #e5e5e5;
+  font-style: normal;
+}
+#service-item .navtit {
+  width: 100%;
+  height: 40px;
+  background: #323434;
+  margin-bottom: 22px;
+}
+#service-item .navtit ul {
+  width: 1200px;
+  margin: 0 auto;
+}
+#service-item .navtit ul li {
+  float: left;
+  width: 140px;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
 }
 #service-item .nav {
   width: 1200px;
@@ -583,8 +702,172 @@
 }
 #service-item .nav .nav-center {
   float: left;
-  width: 970px;
+  width: 960px;
   margin-bottom: 50px;
+}
+#service-item .nav .nav-center .service-link {
+  background: #fff;
+}
+#service-item .nav .nav-center .service-link h3 {
+  width: 916px;
+  height: 60px;
+  line-height: 60px;
+  margin: 0 auto;
+  border-bottom: 1px solid #e5e5e5;
+}
+#service-item .nav .nav-center .service-link h3 i {
+  font-size: 16px;
+  font-weight: 400;
+  display: inline-block;
+  height: 59px;
+  width: 64px;
+  border-bottom: 4px solid #fb474f;
+  cursor: pointer;
+}
+#service-item .nav .nav-center .service-link.fuwu {
+  margin-bottom: 70px;
+}
+#service-item .nav .nav-center .service-link.fuwu .link-item {
+  height: 200px;
+  padding: 25px;
+  cursor: pointer;
+}
+#service-item .nav .nav-center .service-link.fuwu .link-item img {
+  float: left;
+  border: 1px solid #e5e5e5;
+  width: 148px;
+  margin-right: 25px;
+}
+#service-item .nav .nav-center .service-link.fuwu .link-item .link-desc {
+  float: left;
+  height: 150px;
+  width: 700px;
+  position: relative;
+}
+#service-item .nav .nav-center .service-link.fuwu .link-item .link-desc span {
+  display: block;
+  height: 42px;
+  line-height: 42px;
+}
+#service-item .nav .nav-center .service-link.fuwu .link-item .link-desc span:nth-child(1) {
+  font-size: 18px;
+  color: #1d1515;
+}
+#service-item .nav .nav-center .service-link.fuwu .link-item .link-desc span:nth-child(2) {
+  margin: 0;
+  font-size: 14px;
+  color: #929292;
+}
+#service-item .nav .nav-center .service-link.fuwu .link-item .link-desc span:nth-child(3) {
+  font-size: 14px;
+  color: #929292;
+  margin-top: 20px;
+}
+#service-item .nav .nav-center .service-link.fuwu .link-item .link-desc span:nth-child(3) .price {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 30px;
+  line-height: 40px;
+  color: #fc545e;
+  font-weight: 700;
+}
+#service-item .nav .nav-center .service-link.fuwu .link-item .link-desc span:nth-child(3) .price em {
+  font-size: 14px;
+  font-style: normal;
+}
+#service-item .nav .nav-center .service-link.fuwu .link-item .link-desc span:nth-child(3) .oldpic em {
+  font-style: normal;
+  text-decoration: line-through;
+}
+#service-item .nav .nav-center .service-link.fuwu .link-item .link-desc span:nth-child(3) .sold {
+  float: right;
+}
+#service-item .nav .nav-center .service-link.shop {
+  margin-bottom: 20px;
+}
+#service-item .nav .nav-center .service-link.shop .link-item {
+  width: 910px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#service-item .nav .nav-center .service-link.shop .link-item .shopName {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px 0;
+  font-size: 18px;
+}
+#service-item .nav .nav-center .service-link.shop .link-item .shopName img {
+  line-height: 40px;
+  vertical-align: middle;
+}
+#service-item .nav .nav-center .service-link.shop .link-item .desc {
+  display: block;
+  height: 112px;
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 28px;
+}
+#service-item .nav .nav-center .service-link.users h3 {
+  cursor: pointer;
+}
+#service-item .nav .nav-center .service-link.users h3 em {
+  margin-left: 15px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: #121212;
+}
+#service-item .nav .nav-center .service-link.users .conments {
+  overflow: hidden;
+}
+#service-item .nav .nav-center .service-link.users .conments .conment {
+  width: 96%;
+  margin: 0 3%;
+  padding-top: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+#service-item .nav .nav-center .service-link.users .conments .conment img {
+  width: 40px;
+  height: 40px;
+  vertical-align: top;
+}
+#service-item .nav .nav-center .service-link.users .conments .conment ul {
+  display: inline-block;
+  width: 92%;
+  margin-left: 20px;
+  cursor: pointer;
+}
+#service-item .nav .nav-center .service-link.users .conments .conment ul .username {
+  font-size: 16px;
+  line-height: 28px;
+}
+#service-item .nav .nav-center .service-link.users .conments .conment ul .star {
+  line-height: 28px;
+}
+#service-item .nav .nav-center .service-link.users .conments .conment ul .star span img {
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+}
+#service-item .nav .nav-center .service-link.users .conments .conment ul .star span em {
+  font-style: normal;
+  margin-left: 10px;
+}
+#service-item .nav .nav-center .service-link.users .conments .conment ul .say {
+  line-height: 26px;
+  font-size: 16px;
+}
+#service-item .nav .nav-center .service-link.users .conments .conment ul .position {
+  margin-top: 15px;
+  line-height: 40px;
+  color: #898989;
+}
+#service-item .nav .nav-center .service-link.users .conments .conment ul .position img {
+  width: 9px;
+  height: 11px;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 #service-item .nav .aside {
   float: right;

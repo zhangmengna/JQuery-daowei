@@ -5,8 +5,7 @@
   <title>Title</title>
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/index.css">
-  <style type="text/css">
-  </style>
+  <link rel="stylesheet" href="./css/swiper.min.css">
 </head>
 <body>
 <div id="header">
@@ -53,10 +52,10 @@
   </div>
 </div>
 <div class="content">
-
   <section id="firstpage">
     <div class="banner">
-      <div class="banner-wrapper">
+      <!--<div class="banner-wrapper">
+        &lt;!&ndash;轮播&ndash;&gt;
         <ul>
           <li><img src="./images/main/banner1.jpg"></li>
           <li><img src="./images/main/banner2.jpg"></li>
@@ -67,13 +66,24 @@
           <span></span>
           <span></span>
         </div>
+      </div>-->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide bg1"></div>
+          <div class="swiper-slide bg2"></div>
+          <div class="swiper-slide bg3"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
       </div>
+      <!--菜单-->
       <div class="banner-menu">
         <ul class="menu-1">
           <li class="menu-1-item">
             <a href="/" target="_blank" >
               <i>家庭保洁</i>
-              <img src="./images/main/right.png">
+              <img src="./images/main/right.png" class="right-icon">
+              <img src="./images/main/icon1.png" class="left">
             </a>
             <ul class="menu-2">
               <li>
@@ -99,11 +109,12 @@
           <li class="menu-1-item">
             <a href="/" target="_blank" >
               <i>上门按摩</i>
-              <img src="./images/main/right.png">
+              <img src="./images/main/right.png" class="right-icon">
+              <img src="./images/main/icon1.png" class="left">
             </a>
             <ul class="menu-2">
               <li>
-                <a href="/" target="_blank" ><span>中医推拿</span></a>
+                <a href="/" target="_blank" ><span>小时工</span></a>
               </li>
               <li>
                 <a href="/" target="_blank" ><span>开荒保洁</span></a>
@@ -125,13 +136,35 @@
           <li class="menu-1-item">
             <a href="/" target="_blank" >
               <i>上门维修</i>
-              <img src="./images/main/right.png">
+              <img src="./images/main/right.png" class="right-icon">
+              <img src="./images/main/icon1.png" class="left">
             </a>
+            <ul class="menu-2">
+              <li>
+                <a href="/" target="_blank" ><span>小时工</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>开荒保洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>擦玻璃</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>深度清洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>杀虫除螨</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>家具养护</span></a>
+              </li>
+            </ul>
           </li>
           <li class="menu-1-item">
             <a href="/" target="_blank" >
               <i>家电清洗</i>
-              <img src="./images/main/right.png">
+              <img src="./images/main/right.png" class="right-icon">
+              <img src="./images/main/icon1.png" class="left">
             </a>
             <ul class="menu-2">
               <li>
@@ -157,38 +190,164 @@
           <li class="menu-1-item">
             <a href="/" target="_blank" >
               <i>衣物洗护</i>
-              <img src="./images/main/right.png">
+              <img src="./images/main/right.png" class="right-icon">
+              <img src="./images/main/icon1.png" class="left">
             </a>
+            <ul class="menu-2">
+              <li>
+                <a href="/" target="_blank" ><span>小时工</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>开荒保洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>擦玻璃</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>深度清洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>杀虫除螨</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>家具养护</span></a>
+              </li>
+            </ul>
           </li>
           <li class="menu-1-item">
             <a href="/" target="_blank" >
               <i>搬家速运</i>
-              <img src="./images/main/right.png">
+              <img src="./images/main/right.png" class="right-icon">
+              <img src="./images/main/icon1.png" class="left">
             </a>
+            <ul class="menu-2">
+              <li>
+                <a href="/" target="_blank" ><span>小时工</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>开荒保洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>擦玻璃</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>深度清洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>杀虫除螨</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>家具养护</span></a>
+              </li>
+            </ul>
           </li>
           <li class="menu-1-item">
             <a href="/" target="_blank" >
               <i>美容美妆</i>
-              <img src="./images/main/right.png">
+              <img src="./images/main/right.png" class="right-icon">
+              <img src="./images/main/icon1.png" class="left">
             </a>
+            <ul class="menu-2">
+              <li>
+                <a href="/" target="_blank" ><span>小时工</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>开荒保洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>擦玻璃</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>深度清洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>杀虫除螨</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>家具养护</span></a>
+              </li>
+            </ul>
           </li>
           <li class="menu-1-item">
             <a href="/" target="_blank" >
               <i>上门医护</i>
-              <img src="./images/main/right.png">
+              <img src="./images/main/right.png" class="right-icon">
+              <img src="./images/main/icon1.png" class="left">
             </a>
+            <ul class="menu-2">
+              <li>
+                <a href="/" target="_blank" ><span>小时工</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>开荒保洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>擦玻璃</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>深度清洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>杀虫除螨</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>家具养护</span></a>
+              </li>
+            </ul>
           </li>
           <li class="menu-1-item">
             <a href="/" target="_blank" >
               <i>保姆月嫂</i>
-              <img src="./images/main/right.png">
+              <img src="./images/main/right.png" class="right-icon">
+              <img src="./images/main/icon1.png" class="left">
             </a>
+            <ul class="menu-2">
+              <li>
+                <a href="/" target="_blank" ><span>小时工</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>开荒保洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>擦玻璃</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>深度清洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>杀虫除螨</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>家具养护</span></a>
+              </li>
+            </ul>
           </li>
           <li class="menu-1-item">
             <a href="/" target="_blank" >
               <i>养车用车</i>
-              <img src="./images/main/right.png">
+              <img src="./images/main/right.png" class="right-icon">
+              <img src="./images/main/icon1.png" class="left">
             </a>
+            <ul class="menu-2">
+              <li>
+                <a href="/" target="_blank" ><span>小时工</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>开荒保洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>擦玻璃</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>深度清洁</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>杀虫除螨</span></a>
+              </li>
+              <li>
+                <a href="/" target="_blank" ><span>家具养护</span></a>
+              </li>
+            </ul>
           </li>
         </ul>
 
@@ -614,16 +773,15 @@
         <img src="./images/main/xiaohushi.jpg">
       </a>
     </div>
+  </div>
+  <div class="beian">
     <p class="desc">©2015 版权所有 到位 daoway.com 京ICP备15001471号-1 北京邻家科技有限公司</p>
   </div>
+
 </div>
-
+<script src="./js/swiper.min.js"></script>
 <script type="text/javascript" src="./js/jquery-1.10.1.js"></script>
-<script type="text/javascript" src="./js/js.js"></script>
-<script type="text/javascript">
-  $(function(){
+<script type="text/javascript" src="js/index.js"></script>
 
-  })
-</script>
 </body>
 </html>
