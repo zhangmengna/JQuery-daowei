@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./stylesheets/common.css">
+  <link rel="stylesheet" href="./stylesheets/service.css">
+  <script type="text/javascript" src="./javascripts/jquery-1.10.1.js"></script>
+  <script type="text/javascript" src="./javascripts/template-web.js"></script>
+</head>
+<body>
+<div id="header">
+  <div class="wrapper">
+    <div class="container">
+      <div class="navbar-left">
+        <a href="javascript:;">
+          <img src="./images/main/logo.png">
+        </a>
+      </div>
+      <div class="navbar-right">
+        <ul class="nav">
+          <li class="position">
+            <a href="/position">
+              <img src="./images/main/citypoint.png">
+              <span class="showCity">北京</span>
+              <span class="city">切换城市</span>
+            </a>
+          </li>
+          <li class="active">
+            <a href="/">首页</a>
+          </li>
+          <li>
+            <a href="/" class="change">到位APP</a>
+          </li>
+          <li>
+            <a href="/" class="change">服务商</a>
+          </li>
+          <li>
+            <a href="/" class="change">商家入驻</a>
+          </li>
+          <li>
+            <a href="/" class="change">风物APP</a>
+          </li>
+          <li>
+            <a href="/" class="change">关于我们</a>
+          </li>
+          <li class="shanghu">
+            <a href="/" class="shanghu-right">商家登录</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="service">
+  <h2>服务商</h2>
+  <div class="nav">
+    <div class="nav-center">
+      <ul class="list" id="test">
+
+      </ul>
+      <div class="moreshop">
+        <span>
+          查看更多商家
+        <img src="./images/service/fuwu_down2.jpg">
+        </span>
+      </div>
+
+    </div>
+    <div class="aside">
+      <img src="./images/service/tuijianfuwushang_03.jpg">
+      <div>
+        <img src="./images/service/daowayApp.png">
+      </div>
+    </div>
+  </div>
+</section>
+<div class="footer">
+  <div class="footer-top">
+    <div class="promise">
+      <h2>到位<i>服务</i>保证</h2>
+      <p>到位平台担保交易安全，交易未成功100%退款</p>
+      <div class="ser-icon">
+        <span>
+          <img src="./images/main/anquan.jpg">优选服务
+        </span>
+        <span>
+          <img src="./images/main/anquan.jpg">优选服务
+        </span>
+        <span>
+          <img src="./images/main/anquan.jpg">优选服务
+        </span>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <div class="bottom-left">
+      热门城市
+    </div>
+    <div class="bottom-right">
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+      <a href="/">北京</a>
+    </div>
+  </div>
+</div>
+<div class="beian">
+  <p class="desc">©2015 版权所有 到位 daoway.com 京ICP备15001471号-1 北京邻家科技有限公司</p>
+</div>
+<script id="list" type="text/html">
+  {{each data.list}}
+  <a href="/fuwu.html">
+  <li>
+    <img src={{$value.imgUrl}}>
+    <p class="fp">
+      <img src="./images/service/home1.png">
+      <span>{{$value.title}}</span>
+    </p>
+    <p class="lp">已接单数{{orderCount}}单<i>好评{{$value.positiveRate}}</i></p>
+  </li>
+  </a>
+  {{/each}}
+</script>
+<script type="text/javascript">
+  $(function () {
+    // 头部
+    $(document).scroll(function () {
+      if( $(this).scrollTop()>= 71){
+        $('#header').addClass('ani')
+      }else{
+        $('#header').removeClass('ani')
+      }
+    })
+    // temple模板
+    $.get('/getService',function (data) {
+      $('.list').append(template('list',{data:data}))
+    })
+
+    // 加载更多
+    $('.moreshop').click(function () {
+      $.get('/getService',function (data) {
+        $('.list').append(template('list',{data:data}))
+      })
+    })
+  })
+ /* window.onload = function () {
+    $('#test>li').click(function () {
+      window.location.href = 'fuwu.html'
+    })
+  }*/
+
+</script>
+</body>
+</html>
