@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <link rel="stylesheet" href="./stylesheets/common.css">
-  <link rel="stylesheet" href="./stylesheets/fuwu.css">
+  <link rel="stylesheet" href="./stylesheets/serverItem.css">
   <script type="text/javascript" src="./javascripts/jquery-1.10.1.js"></script>
   <script type="text/javascript" src="./javascripts/template-web.js"></script>
 </head>
@@ -61,9 +61,7 @@
   <div class="navtit">
     <ul class="items">
       <li>服务项目</li>
-
       <li>商家简介</li>
-
       <li>用户评论</li>
     </ul>
   </div>
@@ -78,9 +76,7 @@
       <div class="service-link users">
         <h3><!--评论数--></h3>
         <div class="conments">
-          <div class="conment">
           <!--评论列表-->
-          </div>
         </div>
         <div class="pages">
           <a href="javascripts:;" class="up nopage">上一页</a>
@@ -224,8 +220,10 @@
 <script id="comments" type="text/html">
   <i>用户评论</i><em>（{{data.list.commentCount}}条评论）</em>
 </script>
+<!--评论列表（星星数）-->
 <script id="comment" type="text/html">
   {{each data.comments}}
+  <div class="conment">
     <img src={{$value.iconUrl}}>
     <ul>
       <li class="username">{{$value.nick}}</li>
@@ -246,6 +244,7 @@
         {{$value.city}} {{$value.area}}
       </li>
     </ul>
+  </div>
   {{/each}}
 </script>
 <script type="text/javascript">
@@ -271,7 +270,7 @@
    /* $.get('/getComment?page='+page, function (data) {
       $('.conment').append(template('comment',{data:data}))
     })*/
-
+   // 点击切换页
     var $pageA = $('.showpage  a')
     $pageA.click(function () {
       var index = $(this).index()
@@ -284,38 +283,51 @@
       }
       getComments()
     })
-    // 上下翻页
+    // 上一页翻页
     $('.pages .up').click(function () {
-
-      if(page <= 1){
-        $('.pages .up').addClass('nopage')
-        return
-      }else{
-        page--
-        console.log(page)
+      if(page !== 1){
         $('.showpage .act').prev().addClass('act').next().removeClass('act')
-        /*$pageA.removeClass('act')*/
+        page--
         getComments()
+        if(page === 1){
+          $('.pages .up').addClass('nopage')
+          return
+        }
       }
-
     })
+    // 下一页翻页
     $('.pages .down').click(function () {
-      page++
-      $('.showpage .act').next().addClass('act').prev().removeClass('act')
-      getComments()
-      if(page === 10){
+      if(page !== 9){
+        $('.showpage .act').next().addClass('act').prev().removeClass('act')
+        page++
         getComments()
+        if(page === 9){
+          $('.pages .down').addClass('nopage')
+        }
       }
-
     })
 
     function getComments() {
       $.get('/getComment?page='+page , function (data) {
         // 用append（）后面的数据会追加上， html（）会覆盖
-        $('.conment').html(template('comment',{data: data}))
+        $('.conments').html(template('comment',{data: data}))
       })
     }
-
+    // 点击项目，滚动到相应位置
+    var $li = $('.items li')
+    $li.click( function () {
+      $li.removeClass('change')
+      $(this).addClass('change')
+      
+      var liNum = $(this).index()
+      var height = $('.users .conments').offset().top
+      var height = $('.users').offset().top
+      console.log(height)
+      if(liNum == 2){
+        $(document).scrollTop(height - 81)
+      }
+        
+    })
 
   })
 </script>

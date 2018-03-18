@@ -1,3 +1,10 @@
-/**
- * Created by z on 2018/3/16.
- */
+$(function () {
+
+  function scroll() {
+    var $lis = $('#service-item>.navtit>.items>li')
+    $lis.click(function () {
+    })
+
+  }
+
+})

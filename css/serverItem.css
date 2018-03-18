@@ -17,9 +17,8 @@
   from {
     transform: translateY(-100%) rotateX(90deg);
   }
-  to {
+  TO {
     transform: translateY(0) rotateX(0);
-    box-shadow: 2px 2px 2px #e5e5e5;
   }
 }
 #header .wrapper {
@@ -189,9 +188,6 @@
   vertical-align: middle;
   cursor: pointer;
 }
-#service-item .navtit ul .change {
-  background: #424242;
-}
 #service-item .nav {
   width: 1200px;
   overflow: hidden;
@@ -280,7 +276,7 @@
   float: right;
 }
 #service-item .nav .nav-center .service-link.shop {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 #service-item .nav .nav-center .service-link.shop .link-item {
   width: 910px;
@@ -317,6 +313,11 @@
 }
 #service-item .nav .nav-center .service-link.users .conments {
   overflow: hidden;
+  /* .conments-list{
+              width:100%;
+              height:1580px;
+              overflow: hidden;
+            }*/
 }
 #service-item .nav .nav-center .service-link.users .conments .conment {
   width: 96%;

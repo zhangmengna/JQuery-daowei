@@ -1,17 +1,18 @@
 $(function () {
   // swiper
   var swiper = new Swiper('.swiper-container',{
-    loop: true,
     pagination: {
       el: '.swiper-pagination',
-      //autoplay:true, //自动轮播 3000默认 有时候会失效
-      autoplay:{
+      //autoplay:true, //自动轮播 3000默认
+      /*autoplay:{
         delay: 2500,
         disableOnInteraction: false,
       },
       clickable:true, // 点击切换
-      effect:"fade", // 切换效果
-    }
+      effect:"fade", // 切换效果*/
+    },
+    loop: true,
+    autoplay:true
   })
   showMenu ()
   // 鼠标切换二级菜单
