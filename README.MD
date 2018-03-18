@@ -36,10 +36,42 @@ var itemSchema = new Schema({
   collection: 'fuwuitems'
 })
 ```
+    在使用template模板时候用append（）数据一直往上累加，
+    使用html（）数据会进行替换，
+    所以可以在查看更选项时候用append（）
+    在查看评论数时候用html（）
 
 ## 3.17 在server中是通过后台数据动态获取页面数据
-    问题及解决:在上下翻页中点击两次才出现nopage效果，解决在点击后再判断一下
-    遗留问题：评论列表上的评价星星数量还没有解决
+    问题及解决:在上下翻页中点击两次才出现nopage效果，
+              解决在点击后再判断一下
+    遗留问题：评论列表上的评价星星数量
+    
+```
+获取星星数
+function getStar(count){
+ var starArr = []
+ for(var i=0;i<count;i++){
+  starArr.push('red_star.png')
+ }
+ while(starArr.length<5){
+  starArr.push('grey_star.png')
+ }
+ return starArr
+}
+function setStar(data){
+ for(var i=0;i<data.comments.length;i++){
+  var count = data.comments[i].star
+ }
+  var starArr = getStar(count)
+  var data.comments.classStar = starArr
+}
+在调用获取评论时调用setStar（）方法
+在模板中遍历数组
+{{each $value.classArr}}
+<img src='./images/{{$value}}
+{{/each}}
+```
+
 
 
 

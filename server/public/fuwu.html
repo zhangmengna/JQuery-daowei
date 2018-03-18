@@ -90,7 +90,6 @@
             <a href="javascripts:;" class="num">7</a>
             <a href="javascripts:;" class="num">8</a>
             <a href="javascripts:;" class="num">9</a>
-            <a href="javascripts:;" class="num">10</a>
             ...
           </div>
           <a href="javascripts:;" class="down">下一页></a>
@@ -229,9 +228,11 @@
       <li class="username">{{$value.nick}}</li>
       <li class="star">
         <span>
-
-            <img src="./images/service/{{$value.}}.png">
-            <img src="./images/service/gray_star.png">
+          {{each $value.starClass}}
+          <img src="./images/service/{{$value}}">
+          {{/each}}
+          <!--<img src="./images/service/red_star.png">
+          <img src="./images/service/gray_star.png">-->
         </span>
         <span><em>{{$value.createtime}}</em></span>
       </li>
@@ -264,9 +265,7 @@
     })
 
     getComments()
-   /* $.get('/getComment?page='+page, function (data) {
-      $('.conment').append(template('comment',{data:data}))
-    })*/
+
    // 点击切换页
     var $pageA = $('.showpage  a')
     $pageA.click(function () {
@@ -275,8 +274,16 @@
      // page = $(this).html()
       $pageA.removeClass('act')
       $(this).addClass('act')
-      if(page !== 1){
-        $('.pages > .up').removeClass('nopage')
+      if(page === 1){
+        $('.pages .up').addClass('nopage')
+      }else{
+        $('.pages .up').removeClass('nopage')
+      }
+      console.log(page)
+      if(page === 9){
+        $('.pages .down').addClass('nopage')
+      }else {
+        $('.pages .down').removeClass('nopage')
       }
       getComments()
     })
@@ -294,6 +301,7 @@
     })
     // 下一页翻页
     $('.pages .down').click(function () {
+      $('.pages .up').removeClass('nopage')
       if(page !== 9){
         $('.showpage .act').next().addClass('act').prev().removeClass('act')
         page++
@@ -306,9 +314,28 @@
 
     function getComments() {
       $.get('/getComment?page='+page , function (data) {
+        setStar(data)
         // 用append（）后面的数据会追加上， html（）会覆盖
         $('.conments').html(template('comment',{data: data}))
       })
+    }
+    //获取星星评论数
+    function getStar(count){
+      var starArr = []
+      for(var i = 0; i<count ; i++){
+        starArr.push('red_star.png')
+      }
+      while(starArr.length < 5){
+        starArr.push('gray_star.png')
+      }
+      return starArr
+    }
+    function setStar(data) {
+      for(var i=0; i< data.comments.length; i++){
+        const count = data.comments[i].star
+        const starArr = getStar(count)
+        data.comments[i].starClass = starArr
+      }
     }
     // 点击项目，滚动到相应位置
     var $li = $('.items li')
